@@ -1,0 +1,7 @@
+.contents.row
+  %p
+    = @name
+    さんの投稿一覧
+  - @shoes.each do |shoe|
+    = render partial: "shoes/shoe", locals: { shoe: shoe }
+    

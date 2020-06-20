@@ -1,0 +1,7 @@
+.contents.row
+  .container
+    = form_with(model: @shoe, local: true) do |form|
+      %h3
+        投稿する
+      = render partial: "form", locals: { form: form }
+      

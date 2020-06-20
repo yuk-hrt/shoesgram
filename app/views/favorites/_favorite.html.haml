@@ -1,0 +1,9 @@
+- if current_user.already_favorited?(shoe)
+  = link_to shoe_favorites_path(shoe), method: :delete do
+    = icon('fas', 'heart')
+    = shoe.favorites.count
+- else
+  = link_to shoe_favorites_path(shoe), method: :post do
+    = icon('far', 'heart')
+    = shoe.favorites.count
+= shoe.text

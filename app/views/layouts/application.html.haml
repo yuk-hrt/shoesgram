@@ -1,0 +1,35 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Shoesgram
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all'
+    = javascript_include_tag 'application'
+  %body
+    %header.header
+      .header__bar.row
+        %h1.grid-6
+          %a{:href => "/"} Shoesgram
+        - if user_signed_in?
+          .user_nav.grid-6
+            %span
+              = current_user.name
+              %ul.user__info
+                %li
+                  = link_to "/users/#{current_user.id}" do
+                    マイページ
+                  = link_to destroy_user_session_path, method: :delete do
+                    ログアウト
+            = link_to new_shoe_path, class: "post" do
+              投稿する
+        - else
+          .grid-6
+            = link_to new_user_session_path, class: 'post' do
+              ログイン
+            = link_to new_user_registration_path, class: 'post' do
+              新規登録
+    = yield
+    %footer
+      %p shoesgram.
