@@ -1,5 +1,5 @@
 class Shoe < ApplicationRecord
-  validates :title, presence: true
+  validates :text, presence: true
 
   belongs_to :user
   has_many :comments
@@ -7,6 +7,6 @@ class Shoe < ApplicationRecord
 
   def self.search(search)
     return Shoe.all unless search
-    Shoe.where('text LIKE(?)', "%#{search}%")
+    Shoe.where('brand LIKE(?)', "%#{search}%")
   end
 end
