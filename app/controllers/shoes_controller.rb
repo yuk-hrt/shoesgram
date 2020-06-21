@@ -43,7 +43,7 @@ class ShoesController < ApplicationController
 
   private
   def shoe_params
-    params.require(:shoe).permit(:title, :brand, :image, :text).merge(user_id: current_user.id)
+    params.require(:shoe).permit(:brand, :image, :text).merge(user_id: current_user.id)
   end
 
   def move_to_index
