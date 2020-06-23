@@ -1,4 +1,7 @@
-= form.text_field :image, placeholder: "Image Url"
-= form.text_field :brand, placeholder: "Brand"
+.inputbox
+  = form.text_field :brand, class: 'form-content', placeholder: "Brand"
+  = form.label :image, class: 'img' do
+    = icon('far', 'image', class: 'icon')
+    = form.file_field :image, class: 'img-file'
 = form.text_area :text, placeholder: "Text" , rows: "10"
 = form.submit "SEND"

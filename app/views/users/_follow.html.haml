@@ -1,12 +1,10 @@
 <!-- フォローボタン ------------------------------------------------------------------>
 #follower
-  フォロワー
+  Follower:
   = @user.followers.count
-  人
 #follow
-  フォロー
+  Follow:
   = @user.following.count
-  人
 = form_for(current_user, url: relationships_path, method: :post, remote: true) do |form|
   = hidden_field_tag :following_id, user.id
-  = form.submit "フォローする"
+  = form.submit "Follow"
