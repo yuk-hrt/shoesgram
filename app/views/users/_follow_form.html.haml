@@ -7,10 +7,8 @@
       = render partial: "follow", locals: { user: user }
 - else
   #follower
-    フォロワー
+    Follower:
     = @user.followers.count
-    人
   #follow
-    フォロー
+    Follow:
     = @user.following.count
-    人

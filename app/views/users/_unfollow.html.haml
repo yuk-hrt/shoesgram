@@ -1,10 +1,8 @@
 #follower
-  フォロワー
+  Follower:
   = @user.followers.count
-  人
 #follow
-  フォロー
+  Follow:
   = @user.following.count
-  人
 = form_for(current_user, url: relationship_path(user), method: :delete, remote: true) do |form|
-  = form.submit "フォロー解除"
+  = form.submit "UnFollow"

@@ -3,12 +3,12 @@
     %span= image_tag 'arrow_top.png'
     %ul.more_list
       %li
-        = link_to '詳細', shoe_path(shoe.id), method: :get
+        = link_to 'Deta', shoe_path(shoe.id), method: :get
       - if user_signed_in? && current_user.id == shoe.user_id
         %li
-          = link_to '編集', edit_shoe_path(shoe.id), method: :get
+          = link_to 'Edit', edit_shoe_path(shoe.id), method: :get
         %li
-          = link_to '削除', shoe_path(shoe.id), method: :delete
+          = link_to 'Delete', shoe_path(shoe.id), method: :delete
       -# %p
       -#   = shoe.title
   %span.name

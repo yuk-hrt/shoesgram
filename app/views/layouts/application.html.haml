@@ -19,17 +19,17 @@
               %ul.user__info
                 %li
                   = link_to "/users/#{current_user.id}" do
-                    マイページ
+                    MYPAGE
                   = link_to destroy_user_session_path, method: :delete do
-                    ログアウト
+                    LOGOUT
             = link_to new_shoe_path, class: "post" do
-              投稿する
+              POST
         - else
           .grid-6
             = link_to new_user_session_path, class: 'post' do
-              ログイン
+              LOGIN
             = link_to new_user_registration_path, class: 'post' do
-              新規登録
+              SIGNIN
     = yield
     %footer
       %p shoesgram.

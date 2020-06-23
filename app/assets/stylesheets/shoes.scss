@@ -1003,7 +1003,7 @@ form textarea {
 form input[type="submit"] {
   background-color: #666;
   // background-color: #57C3E9;
-  border-radius: 20px;
+  border-radius: 3px;
   color: #fff;
   border: 0;
   font-size: 18px;
@@ -1071,11 +1071,34 @@ footer p {
 #follow, #follower {
   color: #fff;
   background-color: #999;
-  border-radius: 14px;
+  border-radius: 3px;
   margin-bottom: 2px;
   text-align: center;
 }
 
 .user_name {
   font-size: 20px;
+}
+
+.inputbox {
+  width: 100%;
+  position: relative;
+}
+
+.img {
+  cursor: pointer;
+  font-size: 24px;
+  position: absolute;
+  top: 13px;
+  right: 10px;
+}
+.img-file {
+  display: none;
+}
+
+.form-content {
+  height: 50px;
+  width: 100%;
+  color: #666;
+  padding: 0 40px 0 10px;
 }

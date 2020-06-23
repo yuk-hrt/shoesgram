@@ -1,7 +1,6 @@
 .contents.row
   %p.user_name
     = @name
-    の投稿一覧
     = render partial: "follow_form", locals: { user: @user }
   - @shoes.each do |shoe|
     = render partial: "shoes/shoe", locals: { shoe: shoe }
