@@ -1,0 +1,16 @@
+<!-- フォローボタンMYPAGEのユーザーがcurrent_userでなければ表示------------------------------------------------------>
+- if user_signed_in? && user != current_user
+  #follow_form
+    - if current_user.following?(user)
+      = render partial: "unfollow", locals: { user: user }
+    - else
+      = render partial: "follow", locals: { user: user }
+- else
+  #follower
+    フォロワー
+    = @user.followers.count
+    人
+  #follow
+    フォロー
+    = @user.following.count
+    人
