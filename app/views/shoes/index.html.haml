@@ -4,3 +4,4 @@
 .contents.row
   - @shoes.each do |shoe|
     = render partial: "shoe", locals: { shoe: shoe }
+  = paginate @shoes
