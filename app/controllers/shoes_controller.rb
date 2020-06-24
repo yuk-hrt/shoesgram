@@ -3,6 +3,7 @@ class ShoesController < ApplicationController
 
   def index
     @shoes = Shoe.includes(:user).order("created_at DESC")
+    @shoes = Shoe.page(params[:page]).per(10)
   end
 
   def new
