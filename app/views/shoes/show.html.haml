@@ -25,7 +25,7 @@
   .container
     - if current_user
       = form_with(model: [@shoe, @comment], local: true, id: "new_comment") do |form|
-        = form.text_area :text, placeholder: "コメントする", rows: "2", class: "textbox"
+        = form.text_area :text, placeholder: "Type a comment", rows: "2", class: "textbox"
         = form.submit "SEND", class: "form__submit"
     - else
       %strong
@@ -33,7 +33,7 @@
           ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
     .comments
       %h4
-        コメント一覧
+        Comments
       - if @comments
         - @comments.each do |comment|
           %p

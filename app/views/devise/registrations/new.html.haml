@@ -25,3 +25,6 @@
         = f.password_field :password_confirmation, autocomplete: "off"
       .actions
         = f.submit "Sign up"
+    #facebook
+      = link_to user_facebook_omniauth_authorize_path, class: "facebook" do
+        Login with facebook
