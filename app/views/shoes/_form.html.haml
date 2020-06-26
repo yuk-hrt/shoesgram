@@ -1,5 +1,6 @@
 .inputbox
-  = form.text_field :brand, class: 'form-content', placeholder: "Brand"
+  = form.select :brand, ["NIKE", "adidas", "CONVERSE", "VANS", "NEW BARANCE"], {}, class: "form-content", placeholder: "NIKE"
+  -# = form.text_field :brand, class: 'form-content', placeholder: "Brand"
   = form.label :image, class: 'img' do
     = icon('far', 'image', class: 'icon')
     = form.file_field :image, class: 'img-file'

@@ -1119,7 +1119,7 @@ footer p {
 .pagination>.current {  
   color: #fff;  
   background: #666;     /*背景の色を変える*/
-  border-radius: 14px;     /*角を丸くする*/
+  border-radius: 3px;     /*角を丸くする*/
 }
 
 /*ホバー時のデザイン*/
@@ -1130,14 +1130,35 @@ footer p {
 }
 
 #facebook {
-  width: 100%;
+  height: 50px;
+  text-align: center;
+  position: relative;
+}
+.facebook {
+  position: absolute;
+  top:0;
+  left:0;
   padding: 10px;
-  background-color: #3b5998;
   border-radius: 3px;
   border: 0;
   font-size: 18px;
-  text-align: center;
-}
-.facebook {
+  width:100%;
+  background-color: #3b5998;
   color: #fff;
+}
+.facebook:hover {
+  color: #fff;
+  opacity: 0.8 ;
+}
+
+form select {
+  height: 47px;
+  width: 100%;
+  margin: 5px 0 15px;
+  padding: 10px;
+  border: 1px solid #D8D8D8;
+  border-radius: 5px;
+  color: #333;
+  font-family: "游ゴシック", "YuGothic";
+  -webkit-appearance: none;
 }

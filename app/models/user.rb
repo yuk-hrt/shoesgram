@@ -13,6 +13,8 @@ class User < ApplicationRecord
   has_many :follower_relationships, foreign_key: "following_id", class_name: "Relationship", dependent: :destroy
   has_many :followers, through: :follower_relationships
 
+  validates :name, presence: true, length: { maximum: 6 }
+
   # いいねを判断するメソッド
   def already_favorited?(shoe)
     self.favorites.exists?(shoe_id: shoe.id)

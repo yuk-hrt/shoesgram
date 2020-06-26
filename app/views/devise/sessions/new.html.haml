@@ -17,3 +17,6 @@
           = f.check_box :remember_me
       .actions
         = f.submit "Log in"
+    #facebook
+      = link_to user_facebook_omniauth_authorize_path, class: "facebook" do
+        Login with facebook
