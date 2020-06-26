@@ -7,7 +7,7 @@
         = f.label :name
         %em (6 characters maximum)
         %br/
-        = f.text_field :name, autofocus: true, maxlength: "6"
+        = f.text_field :name, autofocus: true
       .field
         = f.label :email
         %br/
@@ -27,4 +27,4 @@
         = f.submit "Sign up"
     #facebook
       = link_to user_facebook_omniauth_authorize_path, class: "facebook" do
-        Login with facebook
+        Sign up with facebook

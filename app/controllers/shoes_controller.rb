@@ -3,7 +3,6 @@ class ShoesController < ApplicationController
 
   def index
     @shoes = Shoe.includes(:user).order("created_at DESC").page(params[:page]).per(10)
-    # @shoes = Shoe.page(params[:page]).per(10)
   end
 
   def new
@@ -35,7 +34,7 @@ class ShoesController < ApplicationController
   end
 
   def search
-    @shoes = Shoe.search(params[:keyword])
+    @shoes = Shoe.search(params[:keyword]).order("created_at DESC")
     respond_to do |format|
       format.html
       format.json

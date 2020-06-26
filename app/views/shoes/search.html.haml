@@ -1,6 +1,7 @@
 = form_with(url: search_shoes_path, local: true, method: :get, class: "search-form") do |form|
-  = form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input"
-  = form.submit "検索", class: "search-btn"
+  = form.select :keyword, ["NIKE", "adidas", "CONVERSE", "VANS", "NEW BARANCE"], {}, class: "search-input", placeholder: "NIKE"
+  -# = form.text_field :keyword, placeholder: "Search Brand", class: "search-input"
+  = form.submit "Search", class: "search-btn"
 .contents.row
   - @shoes.each do |shoe|
     = render partial: "shoe", locals: { shoe: shoe }
