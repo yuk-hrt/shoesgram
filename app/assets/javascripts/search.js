@@ -1,3 +1,6 @@
+// ーーーーーサーチ機能の非同期ーーーーー
+
+
 // $(function() {
 
 //   let search_list = $(".contents.row");

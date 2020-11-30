@@ -9,8 +9,6 @@
           = link_to 'Edit', edit_shoe_path(shoe.id), method: :get
         %li
           = link_to 'Delete', shoe_path(shoe.id), method: :delete
-      -# %p
-      -#   = shoe.title
   %span.name
     = link_to "/users/#{shoe.user.id}" do
       = shoe.user.name

@@ -1,5 +1,5 @@
 class ShoesController < ApplicationController
-  before_action :move_to_index, except: [:index, :show, :search]
+  before_action :set_shoe, only: [:edit, :show]
 
   def index
     @shoes = Shoe.includes(:user).order("created_at DESC").page(params[:page]).per(10)
@@ -19,7 +19,9 @@ class ShoesController < ApplicationController
   end
 
   def edit
-    @shoe = Shoe.find(params[:id])
+    if @shoe.user != current_user
+      redirect_to shoes_path
+    end
   end
 
   def update
@@ -28,7 +30,6 @@ class ShoesController < ApplicationController
   end
 
   def show
-    @shoe = Shoe.find(params[:id])
     @comment = Comment.new
     @comments = @shoe.comments.includes(:user)
   end
@@ -46,8 +47,8 @@ class ShoesController < ApplicationController
     params.require(:shoe).permit(:brand, :image, :text).merge(user_id: current_user.id)
   end
 
-  def move_to_index
-    redirect_to action: :index unless user_signed_in?
+  def set_shoe
+    @shoe = Shoe.find(params[:id])
   end
 
 end
